@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 function dbConnect(){
-    mongoose.connect('mongodb://juanfj:%251234567890db1234567890%25@127.0.0.1:27017/capacitación_db?authSource=admin')
+    mongoose.connect('mongodb+srv://root:root@cluster0.b4yvp.mongodb.net/ciclo4_2021?retryWrites=true&w=majority')
     .then(db => console.log('DB is connected'))
     .catch(err => console.error(err));
 }
