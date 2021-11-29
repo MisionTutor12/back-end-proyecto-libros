@@ -14,8 +14,10 @@ const getOne = async (req, res) => {
 }
 
 const create = async (req, res) => {
-    const body = req.body;
-    const libro = await Libro.create(body);
+    let body = req.body;
+    const maxQuery = await Libro.find({}).sort({ serial: -1 }).limit(1);
+    const serial = maxQuery[0].serial + 1;
+    const libro = await Libro.create({...body,serial:serial});
     res.json(libro);
 }
 
