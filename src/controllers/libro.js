@@ -1,4 +1,4 @@
-const Libro = require('../models/database');
+const Libro = require('../model/database');
 
 
 const getAll = async (req, res) => {
